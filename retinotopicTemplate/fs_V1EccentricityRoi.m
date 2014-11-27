@@ -1,10 +1,9 @@
-function fs_V1EccentricityRoi(MinDegree, MaxDegree)
+function fs_V1EccentricityRoi(ni, MinDegree, MaxDegree)
 % This function divide V1 ROI in periferal and foveal part based on
 % retiontopic eccentrisity.
 %
 % You need to run fs_retinotopicTemplate and get eccecntricity map before this function.  
 % See; fs_retinotopicTemplate
-%
 % 
 %       outType     - 'nifti' or 'mat' [outType='nifti']
 % 
