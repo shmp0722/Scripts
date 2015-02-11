@@ -1,28 +1,34 @@
-function s_ctrIntBathPipeline_OR_Top100K_V1_3mm_clipped_LGN4mm_Tama2
+function s_ctrIntBathPipeline_OR_Top100K_Tama3(id)
 % Multi-Subject Tractography for Tamagawa_subjects using conTrack
 %
 %
 
-%%
-[homeDir,subDir] = Tama_subj2;
+%% pick up subjects
+
+[homeDir,subDir,JMD,CRD,LHON,Ctl,RP,AMDC] = Tama_subj2;
+
+%
+subs = squeeze(subDir(id));
+
 %% Set ctrInitBatchParams
-%
-%
+
+% make Params structure
 ctrParams = ctrInitBatchParams;
 
-ctrParams.projectName = 'OR_Top100K_V1_3mm_clipped_LGN4mm';
+% give the names 
+ctrParams.projectName = 'OR_100K';
 ctrParams.logName = 'myConTrackLog';
 ctrParams.baseDir = homeDir;
 ctrParams.dtDir = 'dwi_2nd';
 ctrParams.roiDir = '/dwi_2nd/ROIs';
-ctrParams.subs = {subDir{4},subDir{5},subDir{6}};
+ctrParams.subs = subs;
 
 % set parameter
 ctrParams.roi1 = {'Lt-LGN4','Rt-LGN4'};
 ctrParams.roi2 = {'lh_V1_smooth3mm_NOT','rh_V1_smooth3mm_NOT'};
 ctrParams.nSamples = 100000;
 ctrParams.maxNodes = 240;
-ctrParams.minNodes = 10; % defalt: 10
+ctrParams.minNodes = 50; % defalt: 10
 ctrParams.stepSize = 1;
 ctrParams.pddpdfFlag = 0;
 ctrParams.wmFlag = 0;
