@@ -14,7 +14,7 @@ function ht_TamagawaPreprocess(subDir, option)
 % (c) Hiromasa 2012 Stanford VISTA team
 
 if notDefined('subDir')
-    [~, subDir] = fileparts(pwd);
+    [basedir, subDir] = fileparts(pwd);
 end
 
 if notDefined('option')
@@ -22,7 +22,7 @@ if notDefined('option')
 end
 
 %% Set the fullpath to data directory
-basedir = '/biac4/wandell/biac2/wandell/data/DWI-Tamagawa-Japan/';
+% basedir = '/biac4/wandell/biac2/wandell/data/DWI-Tamagawa-Japan/';
 % cd(basedir)
 
 %% Set the optimal parameter for SIEMENS scan at Tamagawa
