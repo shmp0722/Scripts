@@ -19,7 +19,9 @@ for i = 1:length(subDir);
     hemi ={'lh','rh'};
     for j =  1 : length(hemi)
         %% Load ecc or pol nii.gz
-        ni =niftiRead(fullfile(eccDir,sprintf('%s_%s_ecc.nii.gz',subDir{i},hemi{j})));        
+        if ~isstruct('ni') || ischar('ni')
+        ni =niftiRead(fullfile(eccDir,sprintf('%s_%s_ecc.nii.gz',subDir{i},hemi{j})));
+        end
         %% select voxels has less than Maximum
         % foveal ROL
         EccROI = ni;

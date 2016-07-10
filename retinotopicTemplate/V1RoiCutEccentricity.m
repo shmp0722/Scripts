@@ -11,7 +11,7 @@ function V1RoiCutEccentricity(MinDegree, MaxDegree)
 %
 
 %% Set the path to data directory
-[homeDir, subDir] = Tama_subj;
+[homeDir ,subDir] = SubJect;
 % [homeDir2]         =  Tama_subj;
 %% Divide V1 ROI based on eccentricity
 for i = 1:length(subDir);    
